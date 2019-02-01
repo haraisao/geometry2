@@ -43,6 +43,8 @@
 //#include "geometry_msgs/TwistStamped.h"
 #include "geometry_msgs/TransformStamped.h"
 
+#include "exportdecl.h"
+
 //////////////////////////backwards startup for porting
 //#include "tf/tf.h"
 
@@ -85,7 +87,7 @@ enum TransformableResult
  *
  * All function calls which pass frame ids can potentially throw the exception tf::LookupException
  */
-class BufferCore
+class TF2_DECL BufferCore
 {
 public:
   /************* Constants ***********************/

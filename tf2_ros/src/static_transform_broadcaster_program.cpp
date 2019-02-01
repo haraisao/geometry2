@@ -99,7 +99,11 @@ int main(int argc, char ** argv)
 
     // Check that all required members are present & of the right type.
     if (!validateXmlRpcTf(tf_data)) {
+#ifdef WIN32
+      ROS_FATAL_STREAM("Could not validate XmlRpcC for TF data: ");
+#else
       ROS_FATAL_STREAM("Could not validate XmlRpcC for TF data: " << tf_data);
+#endif
       return -1;
     }
 

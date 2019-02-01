@@ -163,7 +163,11 @@ public:
 	*  @param pitch Pitch about Y axis
 	*  @param roll Roll about X axis 
 	*/
+#if WIN32
+	[[deprecated]] void setEulerZYX(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll) 
+#else
 	void setEulerZYX(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll) __attribute__((deprecated))
+#endif
 	{
 		setEulerYPR(yaw, pitch, roll);
 	}
@@ -278,8 +282,13 @@ public:
 	* @param yaw Yaw around Z axis
 	* @param pitch Pitch around Y axis
 	* @param roll around X axis 
- 	* @param solution_number Which solution of two possible solutions ( 1 or 2) are possible values*/	
+ 	* @param solution_number Which solution of two possible solutions ( 1 or 2) are possible values*/
+#if WIN32
+	[[deprecated]] void getEulerZYX(tf2Scalar& yaw, tf2Scalar& pitch, tf2Scalar& roll, unsigned int solution_number = 1) const
+
+#else	
 	__attribute__((deprecated)) void getEulerZYX(tf2Scalar& yaw, tf2Scalar& pitch, tf2Scalar& roll, unsigned int solution_number = 1) const
+#endif
 	{
 		getEulerYPR(yaw, pitch, roll, solution_number);
 	};

@@ -54,8 +54,13 @@ namespace tf2
  * \return The converted KDL Frame.
  * \deprecated
  */
+#ifndef WIN32
 inline
 KDL::Frame gmTransformToKDL(const geometry_msgs::TransformStamped& t) __attribute__ ((deprecated));
+#else
+inline  [[deprecated]]
+KDL::Frame gmTransformToKDL(const geometry_msgs::TransformStamped& t);
+#endif
 inline
 KDL::Frame gmTransformToKDL(const geometry_msgs::TransformStamped& t)
   {
@@ -377,10 +382,15 @@ geometry_msgs::QuaternionStamped toMsg(const tf2::Stamped<tf2::Quaternion>& in)
   return out;
 }
 
+#ifndef WIN32
 template <>
 inline
 geometry_msgs::QuaternionStamped toMsg(const tf2::Stamped<tf2::Quaternion>& in)  __attribute__ ((deprecated));
-
+#else
+template <>
+inline  [[deprecated]]
+geometry_msgs::QuaternionStamped toMsg(const tf2::Stamped<tf2::Quaternion>& in) ;
+#endif
 
 //Backwards compatibility remove when forked for Lunar or newer
 template <>
@@ -405,9 +415,15 @@ void fromMsg(const geometry_msgs::QuaternionStamped& in, tf2::Stamped<tf2::Quate
   out.setData(tmp);
 }
 
+#ifndef WIN32
 template<>
 inline
 void fromMsg(const geometry_msgs::QuaternionStamped& in, tf2::Stamped<tf2::Quaternion>& out) __attribute__ ((deprecated));
+#else
+template<>
+inline [[deprecated]]
+void fromMsg(const geometry_msgs::QuaternionStamped& in, tf2::Stamped<tf2::Quaternion>& out) ;
+#endif
 
 //Backwards compatibility remove when forked for Lunar or newer
 template<>

@@ -37,6 +37,8 @@
 
 #include "ros/ros.h"
 #include "geometry_msgs/TransformStamped.h"
+#include "exportdecl.h"
+
 namespace tf2_ros
 {
 
@@ -45,7 +47,7 @@ namespace tf2_ros
  * It will handle all the messaging and stuffing of messages.  And the function prototypes lay out all the 
  * necessary data needed for each message.  */
 
-class TransformBroadcaster{
+class TF2_ROS_DECL TransformBroadcaster{
 public:
   /** \brief Constructor (needs a ros::Node reference) */
   TransformBroadcaster();

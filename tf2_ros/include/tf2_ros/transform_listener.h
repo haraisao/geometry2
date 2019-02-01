@@ -38,6 +38,7 @@
 #include "ros/callback_queue.h"
 
 #include "tf2_ros/buffer.h"
+#include "exportdecl.h"
 
 #include "boost/thread.hpp"
 
@@ -45,7 +46,7 @@ namespace tf2_ros{
 
 /** \brief This class provides an easy way to request and receive coordinate frame transform information.
  */
-class TransformListener
+class TF2_ROS_DECL TransformListener
 {
 
 public:

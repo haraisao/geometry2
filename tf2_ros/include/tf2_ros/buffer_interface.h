@@ -38,6 +38,7 @@
 #include <geometry_msgs/TransformStamped.h>
 #include <sstream>
 #include <tf2/convert.h>
+#include "exportdecl.h"
 
 namespace tf2_ros
 {
@@ -45,7 +46,7 @@ namespace tf2_ros
 /** \brief Abstract interface for wrapping tf2::BufferCore in a ROS-based API.
  * Implementations include tf2_ros::Buffer and tf2_ros::BufferClient.
  */
-class BufferInterface
+class TF2_ROS_DECL BufferInterface
 {
 public:
 

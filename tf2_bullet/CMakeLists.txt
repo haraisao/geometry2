@@ -1,10 +1,16 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(tf2_bullet)
 
+if(NOT WIN32
 find_package(PkgConfig REQUIRED)
+endif()
 
 set(bullet_FOUND 0)
+if(WIN32)
+find_package(bullet REQUIRED)
+else()
 pkg_check_modules(bullet REQUIRED bullet)
+endif()
 
 find_package(catkin REQUIRED COMPONENTS geometry_msgs tf2)
 

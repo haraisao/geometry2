@@ -37,7 +37,7 @@
 #include <tf2_msgs/FrameGraph.h>
 #include <ros/ros.h>
 #include <tf2/convert.h>
-
+#include "exportdecl.h"
 
 namespace tf2_ros
 {
@@ -48,7 +48,7 @@ namespace tf2_ros
    * Stores known frames and offers a ROS service, "tf_frames", which responds to client requests
    * with a response containing a tf2_msgs::FrameGraph representing the relationship of known frames.
    */
-  class Buffer: public BufferInterface, public tf2::BufferCore
+  class TF2_ROS_DECL Buffer: public BufferInterface, public tf2::BufferCore
   {
   public:
     using tf2::BufferCore::lookupTransform;

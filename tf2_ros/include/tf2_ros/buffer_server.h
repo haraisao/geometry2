@@ -41,6 +41,7 @@
 #include <tf2_msgs/LookupTransformAction.h>
 #include <geometry_msgs/TransformStamped.h>
 #include <tf2_ros/buffer.h>
+#include "exportdecl.h"
 
 namespace tf2_ros
 {
@@ -49,7 +50,7 @@ namespace tf2_ros
    * Use this class with a tf2_ros::TransformListener in the same process.
    * You can use this class with a tf2_ros::BufferClient in a different process.
    */
-  class BufferServer
+  class TF2_ROS_DECL BufferServer
   {
     private:
       typedef actionlib::ActionServer<tf2_msgs::LookupTransformAction> LookupTransformServer;
