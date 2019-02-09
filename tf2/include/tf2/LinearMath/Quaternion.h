@@ -48,7 +48,7 @@ public:
    * @param pitch Angle around X unless TF2_EULER_DEFAULT_ZYX defined then Y
    * @param roll Angle around Z unless TF2_EULER_DEFAULT_ZYX defined then X */
 #if WIN32
-  [[deprecate]] Quaternion(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll)
+  [[deprecated]] Quaternion(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll)
 #else
   Quaternion(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll) __attribute__((deprecated))
 #endif
