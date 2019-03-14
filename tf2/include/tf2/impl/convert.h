@@ -55,7 +55,7 @@ template <>
 template <typename A, typename B>
 inline void Converter<true, false>::convert(const A& a, B& b)
 {
-  fromMsg(a, b);
+  tf2::fromMsg(a, b);
 }
 
 template <>
@@ -69,7 +69,7 @@ template <>
 template <typename A, typename B>
 inline void Converter<false, false>::convert(const A& a, B& b)
 {
-  fromMsg(toMsg(a), b);
+  tf2::fromMsg(toMsg(a), b);
 }
 
 }
