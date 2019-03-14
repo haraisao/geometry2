@@ -55,7 +55,11 @@ template <>
 template <typename A, typename B>
 inline void Converter<true, false>::convert(const A& a, B& b)
 {
+#ifdef WIN32
   tf2::fromMsg(a, b);
+#else
+  fromMsg(a, b);
+#endif
 }
 
 template <>
@@ -69,7 +73,11 @@ template <>
 template <typename A, typename B>
 inline void Converter<false, false>::convert(const A& a, B& b)
 {
+#ifdef WIN32
   tf2::fromMsg(toMsg(a), b);
+#else
+  fromMsg(toMsg(a), b);
+#endif
 }
 
 }
